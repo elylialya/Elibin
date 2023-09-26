@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('dashboard.index', [
         'title' => 'Dashboard',
@@ -20,4 +24,14 @@ Route::get('/', function () {
     ]);
 });
 
+=======
+Route::get('/', [DashboardController::class, 'index']);
+
+Route::get('/books', [BookController::class, 'index']);
+Route::get('/book/{id}', [BookController::class, 'detail']);
+Route::get('/cariBuku', [BookController::class, 'cariBuku']);
+
+Route::get('/registration', [AuthController::class, 'registration']);
+Route::get('/login', [AuthController::class, 'login']);
+>>>>>>> 985bc4a582decf67df41a9c37e078a6d38d813f8
 
